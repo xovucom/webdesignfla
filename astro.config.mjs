@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel"; // CORRECTED IMPORT
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  output: "server", // This is the critical line that enables the API route
+  output: "server",
   adapter: vercel()
 });
