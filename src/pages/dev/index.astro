@@ -1,6 +1,6 @@
 ---
 // src/pages/dev/index.astro
-// This is an Astro page, so it needs the --- frontmatter block, even if empty.
+const configUrl = "https://gist.githubusercontent.com/xovucom/5dd5a9632572a352193837f341d6eb0e/raw/be6b8540b81b35e1ee27cc54dba2458b77ba4a1c/config.yml";
 ---
 <!doctype html>
 <html>
@@ -8,6 +8,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
+    <!-- This tells the CMS where to find its configuration -->
+    <link rel="cms-config-url" href={configUrl} />
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
