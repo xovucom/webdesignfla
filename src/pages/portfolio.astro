@@ -1,0 +1,37 @@
+---
+// src/pages/portfolio.astro
+import Layout from '../layouts/Layout.astro';
+
+// In a real project, this data would come from Markdown files via the CMS.
+const portfolioItems = [
+  { title: "Ariel Homes", category: "Real Estate" },
+  { title: "Stall Savers", category: "E-Commerce" },
+  { title: "Addicted 2 Italy", category: "Travel" },
+  { title: "Integrity Garage Door", category: "Local Business" },
+  { title: "Smith Fence", category: "Construction" },
+  { title: "Okeefe's Tavern", category: "Restaurant" },
+];
+---
+
+<Layout title="Portfolio | WebDesignFLA">
+  <div class="container mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-800">Our Work</h1>
+      <p class="text-gray-600">A selection of projects that we're proud of.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {portfolioItems.map(item => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+          <div class="bg-gray-200 h-48 w-full flex items-center justify-center">
+            <span class="text-gray-500">Image Placeholder</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">{item.title}</h3>
+            <p class="text-gray-500">{item.category}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

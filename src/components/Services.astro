@@ -1,0 +1,33 @@
+---
+// A clean services section.
+const serviceItems = [
+  {
+    title: "Web Design",
+    description: "We work with you to create a beautiful, modern design that you are 100% happy with, focusing on performance and usability."
+  },
+  {
+    title: "SEO",
+    description: "Our marketing and technology knowledge ensures your site is optimized to rank against your competition and attract customers."
+  },
+  {
+    title: "Social Media",
+    description: "We help you connect and share information on social platforms to increase awareness of your products and services."
+  }
+]
+---
+<section class="py-16">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">What We Do</h2>
+      <p class="text-gray-600">We provide a complete solution for your online presence.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      {serviceItems.map(item => (
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">{item.title}</h3>
+          <p class="text-gray-600">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

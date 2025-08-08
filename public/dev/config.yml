@@ -1,0 +1,42 @@
+# The backend tells Decap CMS how to connect to your Git repository.
+# We use git-gateway which works well with Vercel and Netlify for easy setup.
+backend:
+  name: git-gateway
+  branch: main # Or master, depending on your default branch name
+
+# This is where all uploaded images and files will be stored.
+media_folder: "public/uploads"
+# This is the public path to access the files from the built site.
+public_folder: "/uploads"
+
+# Collections define the content that is editable in the CMS.
+collections:
+  # The "Portfolio" collection is a folder of files, where each file is a project.
+  - name: "portfolio" # Used in routes, e.g., /admin/collections/portfolio
+    label: "Portfolio" # Used in the CMS UI
+    folder: "src/content/portfolio" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  # The "Pages" collection is a set of individual files.
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/content/pages/about.md"
+        label: "About Us Page"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+      - file: "src/content/pages/services.md"
+        label: "Services Page"
+        name: "services"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Page Content", name: "body", widget: "markdown" }

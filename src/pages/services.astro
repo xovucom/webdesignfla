@@ -1,0 +1,19 @@
+---
+// src/pages/services.astro
+import Layout from '../layouts/Layout.astro';
+import Services from '../components/Services.astro';
+---
+
+<Layout title="Our Services | WebDesignFLA">
+  
+  <!-- We can reuse the component we already built for the homepage! -->
+  <Services />
+
+  <!-- You could add more sections here specific to the services page -->
+  <div class="container mx-auto px-6 py-16 text-center">
+    <p class="text-lg text-gray-700">
+      We offer a full range of services to establish and grow your online presence.
+    </p>
+  </div>
+
+</Layout>

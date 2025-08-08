@@ -1,0 +1,18 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+// CORRECTED: The component is named Contact, not ContactSection
+import Contact from '../components/Contact.astro'; 
+---
+
+<Layout title="Contact Us | WebDesignFLA">
+
+  <div class="text-center pt-16">
+      <h1 class="text-4xl font-bold text-gray-800">Get In Touch</h1>
+      <p class="text-gray-600">We'd love to hear from you.</p>
+  </div>
+  
+  <!-- CORRECTED: Use the correct component name here as well -->
+  <Contact />
+
+</Layout>
