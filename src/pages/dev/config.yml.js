@@ -1,9 +1,11 @@
+// src/pages/dev/config.yml.js
+
+// The raw YAML content for our configuration
+const yamlConfig = `
 backend:
   name: github
-  repo: xovucom/webdesignfla # Your repository
+  repo: xovucom/webdesignfla
   auth_type: oauth
-  base_url: https://webdesignfla.vercel.app # Your site's URL
-  auth_endpoint: /api/auth # The path to the file you just created
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -19,3 +21,13 @@ collections:
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+`;
+
+// This is an Astro API route. It returns the YAML content with the correct header.
+export async function GET() {
+  return new Response(yamlConfig, {
+    headers: {
+      'Content-Type': 'text/yaml; charset=utf-8',
+    },
+  });
+}
