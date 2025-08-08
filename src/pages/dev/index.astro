@@ -1,5 +1,5 @@
 ---
-// src/pages/dev/index.astro //
+// src/pages/dev/index.astro
 const configUrl = "https://gist.githubusercontent.com/xovucom/5dd5a9632572a352193837f341d6eb0e/raw/be6b8540b81b35e1ee27cc54dba2458b77ba4a1c/config.yml";
 ---
 <!doctype html>
@@ -8,13 +8,11 @@ const configUrl = "https://gist.githubusercontent.com/xovucom/5dd5a9632572a35219
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <!-- This tells the CMS where to find its configuration -->
+    <!-- This link tag is the only thing needed to point to our remote config -->
     <link rel="cms-config-url" href={configUrl} />
   </head>
   <body>
+    <!-- This script loads the CMS, which will then find the link tag above -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script>
-      CMS.init();
-    </script>
   </body>
 </html>
