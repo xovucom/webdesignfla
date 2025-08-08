@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: xovucom/webdesignfla
+  repo: xovucom/webdesignfla # Your repository
   auth_type: oauth
-  base_url: https://api.decapcms.org
-  auth_endpoint: auth
+  base_url: https://webdesignfla.vercel.app # Your site's URL
+  auth_endpoint: /api/auth # The path to the file you just created
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
